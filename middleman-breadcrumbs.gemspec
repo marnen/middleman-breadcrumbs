@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/marnen/middleman-breadcrumbs"
   s.summary     = %q{Breadcrumbs helper for Middleman}
   s.description = %q{Breadcrumbs helper for Middleman}
+  s.license = 'MIT'
 
   s.add_runtime_dependency "middleman", '>= 3.3.5'
   ['guard-minitest', 'ffaker'].each {|gem| s.add_development_dependency gem }
