@@ -1,7 +1,10 @@
+require 'rack/utils'
 require 'padrino-helpers'
 
 module BreadcrumbsHelper
-  include Padrino::Helpers
+  def self.included(klass)
+    klass.send(:include, Padrino::Helpers) unless klass.instance_methods.include? :link_to
+  end
 
   def breadcrumbs(page)
     hierarchy = [page]

@@ -1,2 +1,2 @@
 require File.join(File.dirname(__FILE__), 'breadcrumbs')
-Breadcrumbs::VERSION = '0.0.3'
+Breadcrumbs::VERSION = '0.1.0'
