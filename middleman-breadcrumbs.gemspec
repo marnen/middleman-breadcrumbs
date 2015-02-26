@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
 
   s.add_runtime_dependency "middleman", '>= 3.3.5'
-  [['guard', '~> 2.10.5'], 'guard-minitest', 'ffaker'].each {|gem| s.add_development_dependency *gem }
+  ['byebug', ['guard', '~> 2.10.5'], 'guard-minitest', 'ffaker'].each {|gem| s.add_development_dependency *gem }
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
