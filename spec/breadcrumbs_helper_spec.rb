@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+require 'ostruct'
 require 'middleman-breadcrumbs/breadcrumbs_helper'
 
 describe BreadcrumbsHelper do
@@ -57,7 +57,7 @@ describe BreadcrumbsHelper do
   private
 
   def page
-    path = Faker::Internet.http_url
+    path = Faker::Internet.url
     title = Faker::Lorem.sentence
     data = OpenStruct.new title: title
     OpenStruct.new data: data, path: path

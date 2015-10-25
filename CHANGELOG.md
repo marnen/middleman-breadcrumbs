@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Switch from ffaker to new improved Faker.
+
 ## 0.2.0 / 2015-10-25
 
 * Remove setup and console executables from gem. [#3]
