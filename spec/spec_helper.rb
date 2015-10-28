@@ -1,8 +1,4 @@
 require 'minitest/autorun'
-begin
-  require 'byebug'
-rescue LoadError
-  require 'debugger'
-end
+require 'byebug'
 require 'middleman'
 require 'faker'
