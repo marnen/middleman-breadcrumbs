@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
     'rake'
   ].each {|gem| s.add_development_dependency *gem }
 
-  s.files         = `git ls-files`.split("\n")
+  s.files         = `git ls-files`.split("\n") - %w(.gitignore .hound.yml .hound.ruby.yml .travis.yml)
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = []
   s.require_paths = ["lib"]
