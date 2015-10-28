@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.3.0 / 2015-10-27
+
 * Add `:separator` and `:wrapper` options to support a wider range of output styles. [#2]
 * Switch from ffaker to new improved Faker.
 
