@@ -1,5 +1,5 @@
 $:.push File.expand_path("../lib", __FILE__)
-require "middleman-breadcrumbs/version"
+require_relative "./lib/middleman-breadcrumbs/version"
 
 Gem::Specification.new do |s|
   s.name        = "middleman-breadcrumbs"
