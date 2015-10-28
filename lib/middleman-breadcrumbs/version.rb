@@ -1,2 +1,3 @@
-require File.join(File.dirname(__FILE__), 'breadcrumbs')
-Breadcrumbs::VERSION = '0.3.1'
+module BreadcrumbsVersion
+  VERSION = '0.3.1'
+end

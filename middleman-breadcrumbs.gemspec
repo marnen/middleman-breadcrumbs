@@ -3,7 +3,7 @@ require "middleman-breadcrumbs/version"
 
 Gem::Specification.new do |s|
   s.name        = "middleman-breadcrumbs"
-  s.version     = Breadcrumbs::VERSION
+  s.version     = BreadcrumbsVersion::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Marnen Laibow-Koser"]
   s.email       = ["marnen@marnen.org"]
