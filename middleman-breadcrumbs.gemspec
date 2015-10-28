@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.description = %q{Breadcrumbs helper for Middleman}
   s.license = 'MIT'
 
+  s.required_ruby_version = '>= 1.9'
   s.add_runtime_dependency "middleman", '>= 3.3.5'
   [
     'byebug',
