@@ -13,9 +13,11 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
 
   s.required_ruby_version = '>= 1.9'
+
+  debugger_gem = RUBY_VERSION >= '2.0.0' ? 'byebug' : 'debugger'
   s.add_runtime_dependency "middleman", '>= 3.3.5'
   [
-    'byebug',
+    debugger_gem,
     ['guard', '~> 2.10.5'],
     'guard-minitest',
     ['faker', '~> 1.5.0'],
