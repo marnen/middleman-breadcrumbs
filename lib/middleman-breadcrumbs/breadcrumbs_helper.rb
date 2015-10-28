@@ -6,9 +6,9 @@ module BreadcrumbsHelper
     klass.send(:include, Padrino::Helpers) unless klass.instance_methods.include? :link_to
   end
 
-  def breadcrumbs(page)
+  def breadcrumbs(page, separator: ' > ')
     hierarchy = [page]
     hierarchy.unshift hierarchy.first.parent while hierarchy.first.parent
-    hierarchy.collect {|page| link_to page.data.title, "/#{page.path}" }.join(h ' > ')
+    hierarchy.collect {|page| link_to page.data.title, "/#{page.path}" }.join(h separator)
   end
 end
