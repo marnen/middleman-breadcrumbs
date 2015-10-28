@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Configure Travis.
+* Tweak gemspec, dropping Ruby 1.9 support.
+
 ## 0.3.1 / 2015-10-27
 
 * Add Ruby 1.9 to gemspec.
