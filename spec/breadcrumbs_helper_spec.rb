@@ -41,15 +41,58 @@ describe BreadcrumbsHelper do
     end
 
     describe 'non-top-level page' do
-      it 'joins all links to parent pages with > signs' do
-        parent = page
-        grandparent = page
-        @page.parent = parent
-        @page.parent.parent = grandparent
+      before do
+        @parent = page
+        @grandparent = page
+        @page.parent = @parent
+        @page.parent.parent = @grandparent
+      end
 
-        @helper.breadcrumbs(@page).must_equal([grandparent, parent, @page].collect do |level|
-          link_to level.data.title, "/#{level.path}"
-        end.join ' &gt; ')
+      describe 'separator' do
+        describe 'specified' do
+          it 'joins all links to parent pages with the specified separator' do
+            separator = Faker::Lorem.characters(5)
+
+            @helper.breadcrumbs(@page, separator: separator).must_equal([@grandparent, @parent, @page].collect do |level|
+              link_to level.data.title, "/#{level.path}"
+            end.join separator)
+          end
+
+          describe 'nil' do
+            it 'does not use a separator' do
+              @helper.breadcrumbs(@page, separator: nil).must_equal ([@grandparent, @parent, @page].collect do |level|
+                link_to level.data.title, "/#{level.path}"
+              end.join)
+            end
+          end
+        end
+
+        describe 'not specified' do
+          it 'uses " > " as the separator' do
+            @helper.breadcrumbs(@page).must_equal([@grandparent, @parent, @page].collect do |level|
+              link_to level.data.title, "/#{level.path}"
+            end.join ' &gt; ')
+          end
+        end
+      end
+
+      describe 'wrapper' do
+        describe 'specified' do
+          it 'wraps breadcrumbs in the specified element type' do
+            wrapper = Faker::Lorem.word.to_sym
+            @helper.breadcrumbs(@page, wrapper: wrapper, separator: nil).must_equal([@grandparent, @parent, @page].collect do |level|
+              content_tag(wrapper) { link_to level.data.title, "/#{level.path}" }
+            end.join)
+          end
+        end
+
+        describe 'not specified' do
+          it 'does not wrap breadcrumbs in tags' do
+            @helper.breadcrumbs(@page, separator: nil).must_equal([@grandparent, @parent, @page].collect do |level|
+              link_to level.data.title, "/#{level.path}"
+            end.join)
+          end
+        end
       end
     end
   end
