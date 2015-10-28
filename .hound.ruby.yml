@@ -6,7 +6,7 @@ AllCops:
 Style/CollectionMethods:
   Description: Preferred collection methods.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#map-find-select-reduce-size
-  Enabled: true
+  Enabled: false
   PreferredMethods:
     collect: map
     collect!: map!
@@ -16,7 +16,7 @@ Style/CollectionMethods:
 Style/DotPosition:
   Description: Checks the position of the dot in multi-line method calls.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains
-  Enabled: true
+  Enabled: false
   EnforcedStyle: trailing
   SupportedStyles:
   - leading
@@ -24,7 +24,7 @@ Style/DotPosition:
 Style/FileName:
   Description: Use snake_case for source file names.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#snake-case-files
-  Enabled: false
+  Enabled: true
   Exclude: []
 Style/GuardClause:
   Description: Check for conditionals that can be replaced with guard clauses
@@ -34,11 +34,11 @@ Style/GuardClause:
 Style/IfUnlessModifier:
   Description: Favor modifier if/unless usage when you have a single-line body.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#if-as-a-modifier
-  Enabled: false
+  Enabled: true
   MaxLineLength: 80
 Style/OptionHash:
   Description: Don't use option hashes when you can use keyword arguments.
-  Enabled: false
+  Enabled: true
 Style/PercentLiteralDelimiters:
   Description: Use `%`-literal delimiters consistently
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-literal-braces
@@ -96,13 +96,13 @@ Style/SingleLineBlockParams:
 Style/SingleLineMethods:
   Description: Avoid single-line methods.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-single-line-methods
-  Enabled: false
+  Enabled: true
   AllowIfMethodIsEmpty: true
 Style/StringLiterals:
   Description: Checks if uses of quotes match the configured preference.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#consistent-string-literals
   Enabled: true
-  EnforcedStyle: double_quotes
+  EnforcedStyle: single_quotes
   SupportedStyles:
   - single_quotes
   - double_quotes
@@ -117,7 +117,7 @@ Style/StringLiteralsInInterpolation:
 Style/TrailingComma:
   Description: Checks for trailing comma in parameter lists and literals.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas
-  Enabled: false
+  Enabled: true
   EnforcedStyleForMultiline: no_comma
   SupportedStyles:
   - comma
