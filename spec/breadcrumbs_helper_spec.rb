@@ -75,6 +75,25 @@ describe BreadcrumbsHelper do
           end
         end
       end
+
+      describe 'wrapper' do
+        describe 'specified' do
+          it 'wraps breadcrumbs in the specified element type' do
+            wrapper = Faker::Lorem.word.to_sym
+            @helper.breadcrumbs(@page, wrapper: wrapper, separator: nil).must_equal([@grandparent, @parent, @page].collect do |level|
+              content_tag(wrapper) { link_to level.data.title, "/#{level.path}" }
+            end.join)
+          end
+        end
+
+        describe 'not specified' do
+          it 'does not wrap breadcrumbs in tags' do
+            @helper.breadcrumbs(@page, separator: nil).must_equal([@grandparent, @parent, @page].collect do |level|
+              link_to level.data.title, "/#{level.path}"
+            end.join)
+          end
+        end
+      end
     end
   end
 
