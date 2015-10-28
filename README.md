@@ -1,3 +1,5 @@
+![](https://travis-ci.org/marnen/middleman-breadcrumbs.svg)
+
 # middleman-breadcrumbs
 
 Breadcrumbs helper for Middleman

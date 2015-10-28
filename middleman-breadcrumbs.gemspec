@@ -3,7 +3,7 @@ require "middleman-breadcrumbs/version"
 
 Gem::Specification.new do |s|
   s.name        = "middleman-breadcrumbs"
-  s.version     = Breadcrumbs::VERSION
+  s.version     = BreadcrumbsVersion::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Marnen Laibow-Koser"]
   s.email       = ["marnen@marnen.org"]
@@ -12,7 +12,8 @@ Gem::Specification.new do |s|
   s.description = %q{Breadcrumbs helper for Middleman}
   s.license = 'MIT'
 
-  s.required_ruby_version = '>= 1.9'
+  s.required_ruby_version = '>= 2.0'
+
   s.add_runtime_dependency "middleman", '>= 3.3.5'
   [
     'byebug',
