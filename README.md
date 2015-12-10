@@ -4,11 +4,15 @@
 
 Breadcrumbs helper for Middleman
 
+## Installation
+
+Install the gem as usual: put `gem 'middleman-breadcrumbs'` in Gemfile, then run `bundle install`.
+
+Put `activate :breadcrumbs` in config.rb (*not* in the `configure :build` block).
+
 ## Usage
 
-In config.rb: `activate :breadcrumbs`.
-
-In your view files, just call `breadcrumbs(current_page)`.
+In your view files, just call `breadcrumbs(current_page)` to display breadcrumbs.
 
 ### Options
 
