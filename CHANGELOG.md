@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+* Fix loading bug. [#6]
 * Configure Hound CI.
 
 ## 0.3.2 / 2015-10-28
