@@ -2,7 +2,7 @@
 
 # middleman-breadcrumbs
 
-Breadcrumbs helper for Middleman
+Breadcrumbs helper for [Middleman](https://middlemanapp.com/)
 
 ## Installation
 
