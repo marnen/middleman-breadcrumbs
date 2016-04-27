@@ -14,10 +14,10 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.0'
 
-  s.add_runtime_dependency "middleman", '>= 3.3.5'
+  s.add_runtime_dependency "middleman", '>= 4.0.0'
   [
     'byebug',
-    ['guard', '~> 2.10.5'],
+    ['guard', '>= 2.10.5'],
     'guard-minitest',
     ['faker', '~> 1.5.0'],
     'rake'

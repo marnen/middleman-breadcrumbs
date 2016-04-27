@@ -10,23 +10,28 @@ Install the gem as usual: put `gem 'middleman-breadcrumbs'` in Gemfile, then run
 
 Put `activate :breadcrumbs` in config.rb (*not* in the `configure :build` block).
 
+## Configuration
+
+This gem has two configuration options, which are set in the [usual way for Middleman extensions](https://middlemanapp.com/advanced/configuration/#configuring-extensions).
+
+<dl>
+  <dt>`:separator`</dt>
+  <dd>String that separates the breadcrumb levels. Default is ` > `.</dd>
+  <dt>`:wrapper`</dt>
+  <dd>Tag name (as a symbol) in which to wrap each breadcrumb level. Default is `nil`, which means no wrapping.</dd>
+</dl>
+
+For example, if you wanted to wrap the breadcrumb levels in `<li>` elements and separate them with bullets, you would put the following in `config.rb`:
+
+```ruby
+activate :breadcrumbs, separator: ' • ', wrapper: :li
+```
+
+
 ## Usage
 
-In your view files, just call `breadcrumbs(current_page)` to display breadcrumbs.
-
-### Options
-
-#### `:separator`
-
-The breadcrumb levels are separated with ` > ` by default. If you want a different separator, use the `:separator` option—e.g.,  `breadcrumbs(current_page, separator: '|||')`.
-
-#### `:wrapper`
-
-If you want to wrap each breadcrumb level in a tag, pass the tag name to the `:wrapper` option. For example, if you want your breadcrumbs in a list:
+In your view files, just call `breadcrumbs(current_page)` to display breadcrumbs. If you want to override the separator or wrapper defined in the `config.rb` file, pass the appropriate options to the `breadcrumbs` method:
 
 ```erb
-<ul>
-  <%= breadcrumbs current_page, wrapper: :li, separator: nil %>
-</ul>
+<%= breadcrumbs(current_page, separator: ' ||| ', wrapper: :div) %>
 ```
-This will wrap each breadcrumb level in a `<li>` element.
