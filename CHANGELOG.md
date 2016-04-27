@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Require Middleman 4.
+
 ## 0.3.3 / 2015-12-09
 
 * Fix loading bug. [#6]
