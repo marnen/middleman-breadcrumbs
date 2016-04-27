@@ -1,35 +1,22 @@
 require_relative './spec_helper'
 require 'ostruct'
-require 'middleman-breadcrumbs/breadcrumbs_helper'
+require 'middleman-breadcrumbs/breadcrumbs'
 
-describe BreadcrumbsHelper do
+describe Breadcrumbs do
   before do
-    @helper = Object.new
-    @helper_class = @helper.singleton_class
+    app = Minitest::Mock.new
+    [:after_configuration, :initialized, :instance_available].each do |method|
+      app.expect method, true
+    end
+    @helper = Breadcrumbs.new app
   end
 
-  describe '.included' do
-    describe 'link_to is defined' do
-      it 'does not include Padrino::Helpers' do
-        methods = @helper_class.instance_methods
-        @helper_class.stub :instance_methods, methods + [:link_to] do
-          @helper_class.send :include, BreadcrumbsHelper
-          @helper_class.wont_include Padrino::Helpers
-        end
-      end
-    end
-
-    describe 'link_to is not defined' do
-      it 'includes Padrino::Helpers' do
-        @helper_class.send :include, BreadcrumbsHelper
-        @helper_class.must_include Padrino::Helpers
-      end
-    end
+  it 'includes Padrino::Helpers' do
+    Breadcrumbs.must_include Padrino::Helpers
   end
 
   describe '#breadcrumbs' do
     before do
-      @helper.singleton_class.send :include, BreadcrumbsHelper
       self.singleton_class.send :include, Padrino::Helpers
       @page = page
     end
