@@ -26,7 +26,7 @@ class Breadcrumbs < Middleman::Extension
 
   private
 
-  def wrap(content, wrapper: wrapper)
+  def wrap(content, wrapper: nil)
     wrapper ? content_tag(wrapper) { content } : content
   end
 end
