@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 0.4.1 / 2016-04-26
+
+* Remove a silly circular argument reference.
+
 ## 0.4.0 / 2016-04-26
 
 * Create config options for default separator and wrapper. [#8]
