@@ -15,10 +15,18 @@ Put `activate :breadcrumbs` in config.rb (*not* in the `configure :build` block)
 This gem has two configuration options, which are set in the [usual way for Middleman extensions](https://middlemanapp.com/advanced/configuration/#configuring-extensions).
 
 <dl>
-  <dt>`:separator`</dt>
-  <dd>String that separates the breadcrumb levels. Default is ` > `.</dd>
-  <dt>`:wrapper`</dt>
-  <dd>Tag name (as a symbol) in which to wrap each breadcrumb level. Default is `nil`, which means no wrapping.</dd>
+  <dt>
+    `:separator`
+  </dt>
+  <dd>
+    String that separates the breadcrumb levels. Default is ` > `.
+  </dd>
+  <dt>
+    `:wrapper`
+  </dt>
+  <dd>
+    Tag name (as a symbol) in which to wrap each breadcrumb level. Default is `nil`, which means no wrapping.
+  </dd>
 </dl>
 
 For example, if you wanted to wrap the breadcrumb levels in `<li>` elements and separate them with bullets, you would put the following in `config.rb`:
