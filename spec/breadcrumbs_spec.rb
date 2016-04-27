@@ -4,11 +4,12 @@ require 'middleman-breadcrumbs/breadcrumbs'
 
 describe Breadcrumbs do
   before do
-    app = Minitest::Mock.new
-    [:after_configuration, :initialized, :instance_available].each do |method|
-      app.expect method, true
-    end
-    @helper = Breadcrumbs.new app
+    @app = Class.new do
+      [:after_configuration, :initialized, :instance_available].each do |method|
+        define_method(method) { true }
+      end
+    end.new
+    @helper = Breadcrumbs.new @app
   end
 
   it 'includes Padrino::Helpers' do
@@ -51,8 +52,23 @@ describe Breadcrumbs do
         end
 
         describe 'not specified' do
-          it 'uses " > " as the separator' do
-            @helper.breadcrumbs(@page).must_equal breadcrumb_links.join ' &gt; '
+          describe 'default separator' do
+            describe 'specified in config' do
+              before do
+                @default_separator = Faker::Lorem.characters(5)
+                @helper = Breadcrumbs.new @app, separator: @default_separator
+              end
+
+              it 'uses the specified default separator' do
+                @helper.breadcrumbs(@page).must_equal breadcrumb_links.join @default_separator
+              end
+            end
+
+            describe 'not specified in config' do
+              it 'uses " > " as the separator' do
+                @helper.breadcrumbs(@page).must_equal breadcrumb_links.join ' &gt; '
+              end
+            end
           end
         end
       end
