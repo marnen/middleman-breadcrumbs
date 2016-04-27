@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+* Create config options for default separator and wrapper. [#8]
 * Require Middleman 4.
 
 ## 0.3.3 / 2015-12-09
