@@ -16,16 +16,16 @@ This gem has two configuration options, which are set in the [usual way for Midd
 
 <dl>
   <dt>
-    `:separator`
+    <code>:separator</code>
   </dt>
   <dd>
-    String that separates the breadcrumb levels. Default is ` > `.
+    String that separates the breadcrumb levels. Default is <code>&nbsp;>&nbsp;</code>.
   </dd>
   <dt>
-    `:wrapper`
+    <code>:wrapper</code>
   </dt>
   <dd>
-    Tag name (as a symbol) in which to wrap each breadcrumb level. Default is `nil`, which means no wrapping.
+    Tag name (as a symbol) in which to wrap each breadcrumb level. Default is <code>nil</code>, which means no wrapping.
   </dd>
 </dl>
 
