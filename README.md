@@ -38,7 +38,9 @@ activate :breadcrumbs, separator: ' • ', wrapper: :li
 
 ## Usage
 
-In your view files, just call `breadcrumbs(current_page)` to display breadcrumbs. If you want to override the separator or wrapper defined in the `config.rb` file, pass the appropriate options to the `breadcrumbs` method:
+In your view files, just call `breadcrumbs(current_page)` to display breadcrumbs. By default, this will use the separator and wrapper defined in the `config.rb` file.
+
+If you want to override the separator or wrapper defined in the `config.rb` file, pass the appropriate options to the `breadcrumbs` method:
 
 ```erb
 <%= breadcrumbs(current_page, separator: ' ||| ', wrapper: :div) %>
