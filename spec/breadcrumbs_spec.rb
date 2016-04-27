@@ -40,7 +40,6 @@ describe Breadcrumbs do
         describe 'specified' do
           it 'joins all links to parent pages with the specified separator' do
             separator = Faker::Lorem.characters(5)
-
             @helper.breadcrumbs(@page, separator: separator).must_equal breadcrumb_links.join separator
           end
 
@@ -83,8 +82,24 @@ describe Breadcrumbs do
         end
 
         describe 'not specified' do
-          it 'does not wrap breadcrumbs in tags' do
-            @helper.breadcrumbs(@page, separator: nil).must_equal breadcrumb_links.join
+          describe 'default wrapper' do
+            describe 'specified in config' do
+              before do
+                @default_wrapper = Faker::Lorem.word.to_sym
+                @helper = Breadcrumbs.new @app, wrapper: @default_wrapper
+              end
+
+              it 'wraps breadcrumbs in the specified element type' do
+                wrapped_links = breadcrumb_links.collect {|link| content_tag(@default_wrapper) { link } }
+                @helper.breadcrumbs(@page, separator: nil).must_equal wrapped_links.join
+              end
+            end
+
+            describe 'not specified in config' do
+              it 'does not wrap breadcrumbs in tags' do
+                @helper.breadcrumbs(@page, separator: nil).must_equal breadcrumb_links.join
+              end
+            end
           end
         end
       end
