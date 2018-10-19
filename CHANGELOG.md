@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.4.2 / 2018-10-19
+
 * Remove extraneous console output. [#18]
 
 ## 0.4.1 / 2016-04-26
