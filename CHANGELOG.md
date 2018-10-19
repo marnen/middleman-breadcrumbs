@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Remove extraneous console output. [#18]
+
 ## 0.4.1 / 2016-04-26
 
 * Remove a silly circular argument reference.
